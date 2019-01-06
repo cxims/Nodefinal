@@ -131,7 +131,7 @@ router.use((err, req, res, next) => {
   res.format({
     html: () => {
       console.log("error : " + err)
-      res.render("error404", {
+      res.render("404", {
         error: err
       })
     },
