@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<body style="background-color:rgb(25, 28, 31)">
+
+<div align="center">
+<h1 align="center" style="color:white">{{{h1}}}</h1>
+<br>
+<div align="center">
+  <a href="/users"><button class="btn btn-secondary btn-lg active">Users manager</button></a>
+</div>
+<br>
+
+<div class="container">
+    <div id="comments">
+    <table class="table table-bordered table-dark table-hover">
+      <tr width="30%">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Completion</th>
+        <th>User</th>
+        <th>Creation date</th>
+        <th>Edition date</th>
+        <th>Delete</th>
+        <th>View</th>
+      </tr>
+
+
+      {{#each todos}}
+        <tr width="30%">
+        <td align="center">{{{id}}}</td>
+        <td align="center">{{{name}}}</td>
+        <td align="center">{{{completion}}}</td>
+        <td align="center">{{{user_id}}}</td>
+        <td align="center">{{{created_at}}}</td>
+        <td align="center">{{{updated_at}}}</td>
+        <td align="center">
+          <form method="POST" action="todos/{{{id}}}?_method=DELETE">
+              <button class="btn btn-link" type="submit"> Delete </button>
+          </form>
+          <br>
+          <br>
+          </td>
+
+        <td align="center"><a class="nav-link" href="/todos/{{{id}}}">View task</a></td>
+
+      </tr>
+      {{/each}}
+
+      </table>
+    </div>
+
+
+<br>
+<br>
+
+
+<h2 style="color:white">Add a todo</h2>
+
+<form method="POST" action="/todos">
+
+ <table class="table table-bordered table-dark table-hover">
+    <tr width="30%">
+      <th><label for="name">Name</label></th>
+      <th><label for="completion">Completion</label></th>
+      <th><label for="user_id">User_id</label></th>
+      <th>Add todo</th>
+
+
+    </tr>
+    <tr width="10%">
+      <td align="center"><input class="form-control" width="20px" type="text" name="name" id="name" required></td>
+      <td align="center">
+        <select class="form-control" name="completion" id="completion">
+              <option selected="selected" value="todo">todo</option>
+              <option value="inprogress">inprogress</option>
+              <option value="done">done</option>
+          </select></td>
+      <td align="center">
+        <select class="form-control" name="user_id" id="user_id">
+              <option value="1">user_1</option>
+              <option value="2">user_2</option>
+              <option value="3">user_3</option>
+              <option value="4">user_4</option>
+              <option value="5">user_5</option>
+              <option value="6">user_6</option>
+              <option value="7">user_7</option>
+              <option value="8">user_8</option>
+              <option value="9">user_9</option>
+              
+          </select>
+      </td>
+      <td align="center"><button class="btn btn-link" type="submit"> Add todo </button></td>
+
+
+
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+</div>
+</body>
+</html>

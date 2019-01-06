@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<body align="center" style="background-color:rgb(25, 28, 31)"> 
+
+<div align="center">
+<h1 style="color:white">User id {{{id}}}</h1>
+
+<div align="center">
+  <a href="/users"><button class="btn btn-secondary btn-lg active">Return to the users manager</button></a>
+</div>
+
+<br>
+
+
+
+
+  <div class="container">
+  <table class="table table-bordered table-dark table-hover" width="55%">
+    <tr width="30%">
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Mail</th>
+      <th>Password</th>
+      <th>Username</th>
+      <th>Creation date</th>
+      <th>Update date</th>
+      <th>Delete user</th>
+
+    </tr>
+    <tr width="30%">
+      <td align="center">{{{firstname}}}</td>
+      <td align="center">{{{lastname}}}</td>
+      <td align="center">{{{email}}}</td>
+      <td align="center">{{{password}}}</td>
+      <td align="center">{{{username}}}</td>
+      <td align="center">{{{created_at}}}</td>
+      <td align="center">{{{updated_at}}}</td>
+      <td align="center">
+        <form method="POST" action="{{{id}}}?_method=DELETE">
+          <button class="btn btn-link" type="submit"> Delete user </button>
+        </form>
+      </td>
+
+
+    </tr>
+  </table>
+
+<br>
+<br>
+
+<div align="center">
+  <a href="/users/{{id}}/todos"><button class="btn btn-secondary btn-lg active">See todos for this user</button></a>
+</div>
+<br>
+
+
+
+<h2 style="color:white">Edit this user</h2>
+
+<form method="POST" action="{{{id}}}?_method=PUT">
+
+ <table class="table table-bordered table-dark table-hover" width="55%">
+    <tr width="30%">
+      <th><label for="firstname">Firstname : </label></th>
+      <th><label for="lastname">Lastname : </label></th>
+      <th><label for="email">Mail : </label></th>
+      <th><label for="password">Password : </label></th>
+      <th><label for="username">Username : </label></th>
+      <th>Update user</th>
+
+
+    </tr>
+    <tr width="10%">
+      <td align="center"><input class="form-control" width="20px" type="firstname" name="firstname" id="firstname" value="{{{firstname}}}" required></td>
+      <td align="center"><input class="form-control" width="10px" type="lastname" name="lastname" id="lastname" value="{{{lastname}}}"required></td>
+      <td align="center"><input class="form-control" width="10px" type="text" name="email" id="email" value="{{{email}}}"required></td>
+      <td align="center"><input class="form-control" width="10px" type="password" name="password" id="password" value="{{{password}}}"required></td>
+      <td align="center"><input class="form-control" width="10px" type="username" name="username" id="username" value="{{{username}}}"required></td>
+      <td align="center"><button class="btn btn-link" type="submit"> Update user </button></td>
+
+
+
+    </tr>
+  </table>
+
+  </form>
+
+<br>
+<br>
+
+    </div>
+
+
+
+
+  </div>
+</div>

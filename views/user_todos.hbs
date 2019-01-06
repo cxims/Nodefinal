@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<body align="center" style="background-color:rgb(25, 28, 31)"> 
+
+<div align="center">
+
+<h1 style="color:white">{{{h1}}}</h1>
+<br>
+<div align="center">
+  <a href="/users"><button class="btn btn-secondary btn-lg active">Users manager</button></a>
+</div>
+<br>
+
+<div class="container">
+    <div id="comments">
+    <table class="table table-bordered table-dark table-hover">
+      <tr width="30%">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Completion</th>
+        <th>User</th>
+        <th>Creation date</th>
+        <th>Edition date</th>
+        <th>Delete</th>
+        <th>View</th>
+      </tr>
+
+
+      {{#each todos}}
+        <tr width="30%">
+        <td align="center">{{{id}}}</td>
+        <td align="center">{{{name}}}</td>
+        <td align="center">{{{completion}}}</td>
+        <td align="center">{{{user_id}}}</td>
+        <td align="center">{{{created_at}}}</td>
+        <td align="center">{{{updated_at}}}</td>
+        <td align="center">
+          <form method="POST" action="../../todos/{{{id}}}?_method=DELETE">
+              <button class="btn btn-link" type="submit"> Delete </button>
+          </form>
+          <br>
+          <br>
+          </td>
+
+        <td align="center"><a class="nav-link" href="/todos/{{{id}}}">View task</a></td>
+
+      </tr>
+      {{/each}}
+
+      </table>
+    </div>
+
+
+
+</div>
+</div>
+
+</body>
+</html>
